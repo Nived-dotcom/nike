@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="nike.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Nike Landing Page</title>
+</head>
+
+<body>
+  <style>
+    body {
+      width: 100vw;
+      height: auto;
+      display: block;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: #e6e4e4;
+      padding: 20px 20px;
+    }
+
+    .top-bar img {
+      height: 50px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 30px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    /* Right-side links */
+    .nav-right {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      gap: 40px;
+      font-size: 20px;
+    }
+
+    .nav-right a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav-right span {
+      color: #181414;
+    }
+
+    /* Search bar */
+    .search-bar {
+      display: flex;
+      margin-left: 70px;
+      border-radius: 20px;
+      padding: 10px 10px;
+    }
+
+    .search-bar input {
+      border: none;
+      padding-left: 20px;
+      right: 200px
+    }
+
+    .search-bar i {
+      color: #040404;
+    }
+
+    /* Icons */
+    .icon {
+      display: flex;
+      font-size: 70px;
+      flex-direction: column;
+      border-left: 400px;
+    }
+
+    /* Promo Banner */
+    .promo-banner {
+      background: #dedada;
+      text-align: center;
+      padding: 50px;
+      font-size: 20px;
+    }
+
+    .promo-banner a {
+      font-weight: bold;
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .hero-video {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      /* Full screen height */
+      overflow: hidden;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      /* Makes it fill like background */
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      border-top: 100px;
+    }
+
+    .hero-text p {
+      font-size: 4rem;
+    }
+
+    .hero-text button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: black;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Promo Section */
+    .promo {
+      text-align: center;
+      padding: 20px 20px;
+      margin-top: -250px;
+    }
+
+    .promo h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .promo p {
+      margin-top: 0px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .promo .buttons {
+      margin-top: 20px;
+    }
+
+    .promo .buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: black;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Featured Section */
+    .featured h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      margin-left: 20px;
+      font-size: 30px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 columns */
+      grid-template-rows: repeat(2, 1fr);
+      /* 2 rows */
+      gap: 10px;
+      width: 100%;
+      max-width: 3400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      font-size: large;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+    }
+
+    .overlay p {
+      font-size: 50px;
+      margin: 0;
+    }
+
+    .overlay h2 {
+      margin: 5px 0;
+      font-size: 20px;
+    }
+
+    .overlay button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: x-large;
+
+    }
+
+    .shoes img {
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 100px;
+
+    }
+
+    .shoes h1 {
+      text-align: left;
+      color: black;
+      margin-top: 200px;
+      padding-left: 30px;
+    }
+
+
+    /* Footer */
+    .footer {
+      background: #fff;
+      padding: 80px 80px;
+      border-top: 1px solid #ddd;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+      margin-top: 100px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h4 {
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 20px;
+    }
+
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      font-size: 20px;
+      color: #555;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      padding: 0;
+    }
+
+    .footer-links li a {
+      text-decoration: none;
+      color: #555;
+    }
+
+    .footer-country {
+      font-size: 20px;
+      color: #333;
+    }
+
+    /* Mega menu */
+    .nav-links li {
+      position: relative;
+    }
+
+    .mega-menu {
+      position:sticky;
+      top: 100%;
+
+
+      width: 3000px;
+      background: #fff;
+      padding: 100px;
+      padding-right: 200px;
+      display: none;
+      
+      border-radius: 50px;
+      /* hidden by default */
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      border-top: 1px solid #ddd;
+      margin-right: 2000px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .mega-column h4 {
+      font-size: 18px;
+      margin-bottom: 55px;
+      font-weight: bold;
+    }
+
+    .mega-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+
+    .mega-column a:hover {
+      text-decoration: underline;
+    }
+
+    /* Show menu on hover */
+    .nav-links li:hover .mega-menu {
+      display: grid;
+    }
+    @media (max-width: 1024px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .promo h2 {
+    font-size: 2rem;
+  }
+
+  .promo p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+}
+.promo h2 {
+    font-size: 1.8rem;
+  }
+
+  .promo p {
+    font-size: 0.9rem;
+  }
+
+
+  @media (max-width: 480px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .promo h2 {
+    font-size: 1.5rem;
+  }
+
+  .promo p {
+    font-size: 0.8rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .overlay h2 {
+    font-size: 0.8rem;
+  }
+}
+/* ===== General Fixes ===== */
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== Hero Text Scaling ===== */
+.hero-text h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+.hero-text p {
+  font-size: clamp(1.2rem, 6vw, 2rem);
+}
+
+/* ===== Featured Grid Responsive ===== */
+.featured-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  gap: 15px;
+}
+
+/* ===== Footer Responsive ===== */
+.footer-container {
+  flex-direction: row;
+  gap: 30px;
+}
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-column {
+    min-width: 100%;
+  }
+}
+
+/* ===== Navbar Responsive ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .nav-links {
+    gap: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    display: none; /* hidden by default on mobile */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Add hamburger button */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: auto;
+  }
+}
+
+/* ===== Promo Section Scaling ===== */
+@media (max-width: 768px) {
+  .promo h2 {
+    font-size: 1.8rem;
+  }
+  .promo p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .promo h2 {
+    font-size: 1.3rem;
+  }
+  .promo p {
+    font-size: 0.8rem;
+  }
+  .overlay p {
+    font-size: 0.9rem;
+  }
+  .overlay h2 {
+    font-size: 0.7rem;
+  }
+}
+
+/* ===== Mega Menu Fix (Mobile) ===== */
+@media (max-width: 768px) {
+  .mega-menu {
+    display: none !important; /* hide dropdown for mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+  <div class="top-bar"> <img src="./jorden.png" alt="Jordan Log">
+    <div class="nav-right"> <a href="#">Find a Store</a> <span>|</span> <a href="#">Help</a> <span>|</span> <a
+        href="#">Join Us</a> <span>|</span> <a href="#">Sign In</a> </div>
+  </div> <!-- Navbar -->
+  <header class="navbar"> <!-- Nike logo -->
+    <div class="logo"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo">
+    </div> <!-- Navigation links -->
+
+
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="#">New & Featured</a>
+          <!-- Mega Menu -->
+          <div class="mega-menu">
+            <div class="mega-column">
+              <h4>Featured</h4>
+              <a href="#">New & Upcoming Drops</a>
+              <a href="#">New Arrivals</a>
+              <a href="#">Bestsellers</a>
+              <a href="#">SNKRS Launch Calendar</a>
+              <a href="#">Customise with Nike By You</a>
+              <a href="#">Jordan</a>
+            </div>
+            <div class="mega-column">
+              <h4>Trending</h4>
+              <a href="#">Summer Essentials</a>
+              <a href="#">Structure 26 - Run Supported</a>
+              <a href="#">What's Trending</a>
+              <a href="#">Nike 24.7</a>
+              <a href="#">Earth Tones</a>
+              <a href="#">Retro Running</a>
+              <a href="#">Running Shoe Finder</a>
+            </div>
+            <div class="mega-column">
+              <h4>Shop Icons</h4>
+              <a href="#">Lifestyle</a>
+              <a href="#">Air Force 1</a>
+              <a href="#">Air Jordan 1</a>
+              <a href="#">Air Max</a>
+              <a href="#">Dunk</a>
+              <a href="#">Cortez</a>
+              <a href="#">Blazer</a>
+              <a href="#">Pegasus</a>
+              <a href="#">Vomero</a>
+            </div>
+            <div class="mega-column">
+              <h4>Shop By Sport</h4>
+              <a href="#">Running</a>
+              <a href="#">Basketball</a>
+              <a href="#">Football</a>
+              <a href="#">Golf</a>
+              <a href="#">Tennis</a>
+              <a href="#">Gym & Training</a>
+              <a href="#">Yoga</a>
+              <a href="#">Skateboarding</a>
+            </div>
+          </div>
+        </li>
+
+
+
+
+        <nav>
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#">Men</a>
+              <!-- Mega Menu -->
+              <div class="mega-menu">
+                <div class="mega-column">
+                  <h4>Featured</h4>
+                  <a href="#">New & Upcoming Drops</a>
+                  <a href="#">New Arrivals</a>
+                  <a href="#">Bestsellers</a>
+                  <a href="#">SNKRS Launch Calendar</a>
+                  <a href="#">Customise with Nike By You</a>
+                  <a href="#">Jordan</a>
+                </div>
+                <div class="mega-column">
+                  <h4>Trending</h4>
+                  <a href="#">Summer Essentials</a>
+                  <a href="#">Structure 26 - Run Supported</a>
+                  <a href="#">What's Trending</a>
+                  <a href="#">Nike 24.7</a>
+                  <a href="#">Earth Tones</a>
+                  <a href="#">Retro Running</a>
+                  <a href="#">Running Shoe Finder</a>
+                </div>
+                <div class="mega-column">
+                  <h4>Shop Icons</h4>
+                  <a href="#">Lifestyle</a>
+                  <a href="#">Air Force 1</a>
+                  <a href="#">Air Jordan 1</a>
+                  <a href="#">Air Max</a>
+                  <a href="#">Dunk</a>
+                  <a href="#">Cortez</a>
+                  <a href="#">Blazer</a>
+                  <a href="#">Pegasus</a>
+                  <a href="#">Vomero</a>
+                </div>
+                <div class="mega-column">
+                  <h4>Shop By Sport</h4>
+                  <a href="#">Running</a>
+                  <a href="#">Basketball</a>
+                  <a href="#">Football</a>
+                  <a href="#">Golf</a>
+                  <a href="#">Tennis</a>
+                  <a href="#">Gym & Training</a>
+                  <a href="#">Yoga</a>
+                  <a href="#">Skateboarding</a>
+                </div>
+              </div>
+            </li>
+
+            <ul class="nav-links">
+              <li class="dropdown">
+                <a href="#">Women</a>
+                <!-- Mega Menu -->
+                <div class="mega-menu">
+                  <div class="mega-column">
+                    <h4>Featured</h4>
+                    <a href="#">New & Upcoming Drops</a>
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Bestsellers</a>
+                    <a href="#">SNKRS Launch Calendar</a>
+                    <a href="#">Customise with Nike By You</a>
+                    <a href="#">Jordan</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4>Trending</h4>
+                    <a href="#">Summer Essentials</a>
+                    <a href="#">Structure 26 - Run Supported</a>
+                    <a href="#">What's Trending</a>
+                    <a href="#">Nike 24.7</a>
+                    <a href="#">Earth Tones</a>
+                    <a href="#">Retro Running</a>
+                    <a href="#">Running Shoe Finder</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4>Shop Icons</h4>
+                    <a href="#">Lifestyle</a>
+                    <a href="#">Air Force 1</a>
+                    <a href="#">Air Jordan 1</a>
+                    <a href="#">Air Max</a>
+                    <a href="#">Dunk</a>
+                    <a href="#">Cortez</a>
+                    <a href="#">Blazer</a>
+                    <a href="#">Pegasus</a>
+                    <a href="#">Vomero</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4>Shop By Sport</h4>
+                    <a href="#">Running</a>
+                    <a href="#">Basketball</a>
+                    <a href="#">Football</a>
+                    <a href="#">Golf</a>
+                    <a href="#">Tennis</a>
+                    <a href="#">Gym & Training</a>
+                    <a href="#">Yoga</a>
+                    <a href="#">Skateboarding</a>
+                  </div>
+                </div>
+              </li>
+
+              <ul class="nav-links">
+                <li class="dropdown">
+                  <a href="#">Kids</a>
+                  <!-- Mega Menu -->
+                  <div class="mega-menu">
+                    <div class="mega-column">
+                      <h4>Featured</h4>
+                      <a href="#">New & Upcoming Drops</a>
+                      <a href="#">New Arrivals</a>
+                      <a href="#">Bestsellers</a>
+                      <a href="#">SNKRS Launch Calendar</a>
+                      <a href="#">Customise with Nike By You</a>
+                      <a href="#">Jordan</a>
+                    </div>
+                    <div class="mega-column">
+                      <h4>Trending</h4>
+                      <a href="#">Summer Essentials</a>
+                      <a href="#">Structure 26 - Run Supported</a>
+                      <a href="#">What's Trending</a>
+                      <a href="#">Nike 24.7</a>
+                      <a href="#">Earth Tones</a>
+                      <a href="#">Retro Running</a>
+                      <a href="#">Running Shoe Finder</a>
+                    </div>
+                    <div class="mega-column">
+                      <h4>Shop Icons</h4>
+                      <a href="#">Lifestyle</a>
+                      <a href="#">Air Force 1</a>
+                      <a href="#">Air Jordan 1</a>
+                      <a href="#">Air Max</a>
+                      <a href="#">Dunk</a>
+                      <a href="#">Cortez</a>
+                      <a href="#">Blazer</a>
+                      <a href="#">Pegasus</a>
+                      <a href="#">Vomero</a>
+                    </div>
+                    <div class="mega-column">
+                      <h4>Shop By Sport</h4>
+                      <a href="#">Running</a>
+                      <a href="#">Basketball</a>
+                      <a href="#">Football</a>
+                      <a href="#">Golf</a>
+                      <a href="#">Tennis</a>
+                      <a href="#">Gym & Training</a>
+                      <a href="#">Yoga</a>
+                      <a href="#">Skateboarding</a>
+                    </div>
+                  </div>
+                </li>
+
+                <ul class="nav-links">
+                  <li class="dropdown">
+                    <a href="#">Sale</a>
+                    <!-- Mega Menu -->
+                    <div class="mega-menu">
+                      <div class="mega-column">
+                        <h4>Featured</h4>
+                        <a href="#">New & Upcoming Drops</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Bestsellers</a>
+                        <a href="#">SNKRS Launch Calendar</a>
+                        <a href="#">Customise with Nike By You</a>
+                        <a href="#">Jordan</a>
+                      </div>
+                      <div class="mega-column">
+                        <h4>Trending</h4>
+                        <a href="#">Summer Essentials</a>
+                        <a href="#">Structure 26 - Run Supported</a>
+                        <a href="#">What's Trending</a>
+                        <a href="#">Nike 24.7</a>
+                        <a href="#">Earth Tones</a>
+                        <a href="#">Retro Running</a>
+                        <a href="#">Running Shoe Finder</a>
+                      </div>
+                      <div class="mega-column">
+                        <h4>Shop Icons</h4>
+                        <a href="#">Lifestyle</a>
+                        <a href="#">Air Force 1</a>
+                        <a href="#">Air Jordan 1</a>
+                        <a href="#">Air Max</a>
+                        <a href="#">Dunk</a>
+                        <a href="#">Cortez</a>
+                        <a href="#">Blazer</a>
+                        <a href="#">Pegasus</a>
+                        <a href="#">Vomero</a>
+                      </div>
+                      <div class="mega-column">
+                        <h4>Shop By Sport</h4>
+                        <a href="#">Running</a>
+                        <a href="#">Basketball</a>
+                        <a href="#">Football</a>
+                        <a href="#">Golf</a>
+                        <a href="#">Tennis</a>
+                        <a href="#">Gym & Training</a>
+                        <a href="#">Yoga</a>
+                        <a href="#">Skateboarding</a>
+                      </div>
+                    </div>
+                  </li>
+
+
+                  <ul class="nav-links">
+                    <li class="dropdown">
+                      <a href="#">SNKRS</a>
+                      <!-- Mega Menu -->
+                      <div class="mega-menu">
+                        <div class="mega-column">
+                          <h4>Featured</h4>
+                          <a href="#">New & Upcoming Drops</a>
+                          <a href="#">New Arrivals</a>
+                          <a href="#">Bestsellers</a>
+                          <a href="#">SNKRS Launch Calendar</a>
+                          <a href="#">Customise with Nike By You</a>
+                          <a href="#">Jordan</a>
+                        </div>
+                        <div class="mega-column">
+                          <h4>Trending</h4>
+                          <a href="#">Summer Essentials</a>
+                          <a href="#">Structure 26 - Run Supported</a>
+                          <a href="#">What's Trending</a>
+                          <a href="#">Nike 24.7</a>
+                          <a href="#">Earth Tones</a>
+                          <a href="#">Retro Running</a>
+                          <a href="#">Running Shoe Finder</a>
+                        </div>
+                        <div class="mega-column">
+                          <h4>Shop Icons</h4>
+                          <a href="#">Lifestyle</a>
+                          <a href="#">Air Force 1</a>
+                          <a href="#">Air Jordan 1</a>
+                          <a href="#">Air Max</a>
+                          <a href="#">Dunk</a>
+                          <a href="#">Cortez</a>
+                          <a href="#">Blazer</a>
+                          <a href="#">Pegasus</a>
+                          <a href="#">Vomero</a>
+                        </div>
+                        <div class="mega-column">
+                          <h4>Shop By Sport</h4>
+                          <a href="#">Running</a>
+                          <a href="#">Basketball</a>
+                          <a href="#">Football</a>
+                          <a href="#">Golf</a>
+                          <a href="#">Tennis</a>
+                          <a href="#">Gym & Training</a>
+                          <a href="#">Yoga</a>
+                          <a href="#">Skateboarding</a>
+                        </div>
+                      </div>
+                    </li>
+
+        </nav>
+
+      </ul>
+    </nav> <!-- Right-side options -->
+    <div class="search-bar"> <i class="fa fa-search"></i> <input type="text" placeholder="Search">
+      <div class="icons"> <i class="fa-regular fa-heart"></i> <i class="fa-solid fa-bag-shopping"></i> </div>
+  </header> <!-- Promo Banner -->
+  <section class="promo-banner">
+    <p>New Styles On Sale: Up To 40% Off <br><a href="#">Shop All Our New Markdowns</a></p>
+  </section> <!-- Video Section -->
+  <div class="hero-video"> <video autoplay muted loop>
+      <source src="./1110603_Bench_Shoelaces_3840x2160.mp4" type="video/mp4">
+    </video> </div>
+  <div class="promo">
+    <p>Level Up</p>
+    <h2>VOMERO PLUS</h2>
+    <p>More cushioned. More comfort. More running.</p>
+    <div class="buttons"> <button>Shop</button> <button>Learn More</button> </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="featured">
+    <h3>Featured</h3>
+    <div class="featured-grid">
+      <div class="card">
+        <img
+          src="https://media.about.nike.com/img/2420ca82-912a-4ace-b73a-f84191a374d1/nike-international-running-pack-1.jpeg?m=eyJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjEwMH0sIndlYnAiOnsicXVhbGl0eSI6MTAwfSwiZXh0cmFjdCI6eyJsZWZ0IjowLCJ0b3AiOjE1MCwid2lkdGgiOjMyMDAsImhlaWdodCI6MjEzN30sInJlc2l6ZSI6eyJ3aWR0aCI6MTA4MH19fQ%3D%3D&s=46bdcf9d11d28bd9be5b09e713315064b8cc4ea276fa5727d9b6f20ac8a2a5cb"
+          alt="Rebel Legacy">
+        <div class="overlay">
+          <p>Nike International Running Pack</p>
+          <h2>Rebel Legacy</h2>
+          <button>Get Notified</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://as1.ftcdn.net/v2/jpg/05/36/68/56/1000_F_536685625_IGLSN4Fm5EGcxQ4kH8Z1yfM9iFdCig5o.jpg"
+          alt="Football">
+        <div class="overlay">
+          <p>Nike Football</p>
+          <h2>Erling Haaland Phantom 6 Low</h2>
+          <button>Shop</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://as1.ftcdn.net/v2/jpg/03/03/94/10/1000_F_303941035_m5PCEjqz1zRnvWsVZjg4a6OpcBVb4mjh.jpg"
+          alt="Running">
+        <div class="overlay">
+          <p>Kids Training</p>
+          <h2>Play Strong</h2>
+          <button>Shop</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://as2.ftcdn.net/v2/jpg/04/22/01/29/1000_F_422012914_66rzvg5pQq3IZ5k7ZEX8SR4dyPwMVVVR.jpg "
+          alt="Shoes">
+        <div class="overlay">
+          <p>Nike Lifestyle</p>
+          <h2>Classic Comfort</h2>
+          <button>Shop</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="shoes">
+    <h1>Don't miss</h1>
+
+    <img src="./Screenshot 2025-08-26 155018.png" alt="abs" width="3200px" ,height=700px>
+
+
+    <h1>Shop by icons</h1>
+    <img src="./Screenshot 2025-08-25 155132.png" alt="shoes" width="3100px" ,height=600px>
+
+    <h1>Shop by sports</h1>
+    <div class="img2"><img src="./Screenshot 2025-08-25 221717.png" alt="shoe" width="3200px" ,height=700px></div>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Find A Store</a></li>
+            <li><a href="#">Become A Member</a></li>
+            <li><a href="#">Running Shoe Finder</a></li>
+            <li><a href="#">Product Advice</a></li>
+            <li><a href="#">Send Us Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Get Help</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Payment Options</a></li>
+            <li><a href="#">Contact Us On Nike.com Inquiries</a></li>
+            <li><a href="#">Contact Us On All Other Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Nike</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Impact</a></li>
+            <li><a href="#">Report a Concern</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Nike, Inc. All rights reserved</p>
+        <ul class="footer-links">
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Terms of Sale</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Nike Privacy Policy</a></li>
+          <li><a href="#">Privacy Settings</a></li>
+        </ul>
+        <div class="footer-country">
+          <i class="fa-solid fa-globe"></i> India
+        </div>
+      </div>
+    </footer>
